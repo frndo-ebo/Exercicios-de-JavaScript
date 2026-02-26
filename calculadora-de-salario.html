@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>O salário final aparecerá aqui.</h2>
+    <p id="result"></p>
+</body>
+
+<script>
+
+    //Informações iniciais
+    let funci = prompt("Insira o nome de seu funcionário: ")
+    let slr = Number(prompt("Insira o salário de seu funcionário: "))
+    let bon = parseFloat(prompt("Insira o percentual de bônus que seu funcionário irá receber: "))
+    let desc = parseFloat(prompt("Insira o percentual de desconto que seu funcionário irá receber: "))
+
+    //Converter porcentagem para decimal
+    bon = bon / 100;
+    desc = desc / 100
+
+    //Cálculo de bônus e desconto
+    let slr_b = slr + (bon * slr)
+    let slr_d = slr_b - (slr_b * desc)
+
+    //Salário final
+    let result = slr_d
+
+
+    document.getElementById("result").innerText = 
+        "O salário final de " + funci + " é: " + result
+
+</script>
+</html>
